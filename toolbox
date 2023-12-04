@@ -3,12 +3,14 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+use Anzob\ToolboxApp\DbInsertCommand;
 use Anzob\ToolboxApp\PingCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application();
 
 $app->add(new PingCommand());
+$app->add(new DbInsertCommand());
 
 try {
     $app->run();
