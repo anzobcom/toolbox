@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Anzob\ToolboxApp\PingCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+
+$app->add(new PingCommand());
+
+try {
+    $app->run();
+} catch (Exception $e) {
+    var_dump($e);
+}
