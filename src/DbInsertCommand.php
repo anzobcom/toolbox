@@ -7,6 +7,8 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use function PHPUnit\Framework\fileExists;
+
 class DbInsertCommand extends Command
 {
     protected function configure(): void
@@ -31,6 +33,15 @@ class DbInsertCommand extends Command
         ];
 
         $database = new Database($config['database']);
+
+        $csvFile = file('parex-product-list.csv');
+        $data = [];
+
+        foreach ($csvFile as $line) {
+            $data[] = str_getcsv($line);
+        }
+
+        var_dump($data);
 
         return Command::SUCCESS;
     }
