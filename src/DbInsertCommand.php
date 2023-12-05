@@ -25,14 +25,13 @@ class DbInsertCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $config['database'] = [
-            'host' => 'localhost',
-            'port' => 3306,
-            'dbname' => 'flamingo',
-            'charset' => 'utf8mb4'
-        ];
+        $english_language = 1;
+        $eng_desc_col = 11;
+        $russian_language = 2;
+        $ru_desc_col = 12;
 
-        $database = new Database($config['database']);
+        $config = new DatabaseConfig('flamingo');
+        $database = new Database($config);
 
         $csvFile = file('parex-product-list.csv');
         $data = [];
@@ -41,7 +40,19 @@ class DbInsertCommand extends Command
             $data[] = str_getcsv($line);
         }
 
-        var_dump($data);
+        for($i = 0; $i < count($data); $i++) {
+            if ($data[$i][$ru_desc_col] !== '') {
+                $database->query(
+                    'INSERT INTO oc_product_description (language_id, name, description, meta_title) VALUES (:language_id, :name, :description, :meta_title)',
+                    [
+                        'language_id' => $russian_language,
+                        'name' => $data[$i][$ru_desc_col],
+                        'description' => $data[$i][$ru_desc_col],
+                        'meta_title' => $data[$i][$ru_desc_col]
+                    ]
+                );
+            }
+        }
 
         return Command::SUCCESS;
     }
