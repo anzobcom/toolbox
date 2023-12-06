@@ -10,21 +10,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ProductsImportCommand extends Command
 {
+    private const ENGLISH_LANGUAGE = 1;
+    private const ENG_DESC_COL = 11;
+    private const RUSSIAN_LANGUAGE = 2;
+    private const RU_DESC_COL = 12;
+
     protected function configure(): void
     {
         $this
-            ->setName('db-insert')
+            ->setName('import-products')
             ->setDescription('Import products.')
             ->setHelp('This command allows you to import products.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $english_language = 1;
-        $eng_desc_col = 11;
-        $russian_language = 2;
-        $ru_desc_col = 12;
-
         $config = new DatabaseConfig('flamingo');
         $database = new Database($config);
 
@@ -36,7 +36,7 @@ class ProductsImportCommand extends Command
         }
 
         for($i = 0; $i < count($data); $i++) {
-            if ($data[$i][$ru_desc_col] !== '') {
+            if ($data[$i][self::RU_DESC_COL] !== '') {
                 $database->query(
                     'INSERT INTO oc_product_description (
                             language_id, 
@@ -50,10 +50,10 @@ class ProductsImportCommand extends Command
                             :meta_title
                     )',
                     [
-                        'language_id' => $russian_language,
-                        'name' => $data[$i][$ru_desc_col],
-                        'description' => $data[$i][$ru_desc_col],
-                        'meta_title' => $data[$i][$ru_desc_col]
+                        'language_id' => self::RUSSIAN_LANGUAGE,
+                        'name' => $data[$i][self::RU_DESC_COL],
+                        'description' => $data[$i][self::RU_DESC_COL],
+                        'meta_title' => $data[$i][self::RU_DESC_COL]
                     ]
                 );
             }
