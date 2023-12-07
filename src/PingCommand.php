@@ -11,10 +11,7 @@ class PingCommand extends Command
 {
     protected function configure(): void
     {
-        $this
-            ->setName('ping')
-            ->setDescription('Checks the toolbox app.')
-            ->setHelp('This command allows you to check if toolbox app is working or not.');
+        $this->setDescription('The ping-pong command');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
