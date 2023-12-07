@@ -1,10 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Anzob\ToolboxApp;
+namespace Anzob\ToolboxApp\Other\ProductImport;
 
-use Symfony\Component\Console\Command\Command;
+use Anzob\ToolboxApp\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -18,7 +18,6 @@ class ProductsImportCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('import-products')
             ->setDescription('Import products.')
             ->setHelp('This command allows you to import products.');
     }
@@ -35,7 +34,7 @@ class ProductsImportCommand extends Command
             $data[] = str_getcsv($line);
         }
 
-        for($i = 0; $i < count($data); $i++) {
+        for ($i = 0; $i < count($data); $i++) {
             if ($data[$i][self::RU_DESC_COL] !== '') {
                 $database->query(
                     'INSERT INTO oc_product_description (
@@ -53,12 +52,12 @@ class ProductsImportCommand extends Command
                         'language_id' => self::RUSSIAN_LANGUAGE,
                         'name' => $data[$i][self::RU_DESC_COL],
                         'description' => $data[$i][self::RU_DESC_COL],
-                        'meta_title' => $data[$i][self::RU_DESC_COL]
+                        'meta_title' => $data[$i][self::RU_DESC_COL],
                     ]
                 );
             }
         }
 
-        return Command::SUCCESS;
+        return self::SUCCESS;
     }
 }

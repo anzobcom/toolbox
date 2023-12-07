@@ -1,11 +1,12 @@
 #!/usr/bin/env php
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Anzob\ToolboxApp\ProductsImportCommand;
+use Anzob\ToolboxApp\OpenCart\PublishTheme\PublishThemeCommand;
+use Anzob\ToolboxApp\Other\ProductImport\ProductsImportCommand;
 use Anzob\ToolboxApp\PingCommand;
 use Symfony\Component\Console\Application;
 
@@ -13,9 +14,11 @@ $app = new Application();
 
 $app->add(new PingCommand());
 $app->add(new ProductsImportCommand());
+$app->add(new PublishThemeCommand());
 
 try {
     $app->run();
 } catch (Exception $e) {
-    var_dump($e);
+    echo $e->getMessage() . PHP_EOL;
+    exit(1);
 }

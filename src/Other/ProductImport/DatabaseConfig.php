@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Anzob\ToolboxApp;
+namespace Anzob\ToolboxApp\Other\ProductImport;
 
 final readonly class DatabaseConfig
 {

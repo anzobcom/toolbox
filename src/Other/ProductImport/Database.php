@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace Anzob\ToolboxApp;
+namespace Anzob\ToolboxApp\Other\ProductImport;
 
 use PDO;
 use PDOStatement;
@@ -15,12 +15,12 @@ class Database
     public function __construct(DatabaseConfig $config)
     {
         $dsn = 'mysql:host=' . $config->getHost()
-            .';port=' . $config->getPort()
+            . ';port=' . $config->getPort()
             . ';dbname=' . $config->getDbname()
             . ';charset=' . $config->getCharset();
 
         $this->connection = new PDO($dsn, $config->getUsername(), $config->getPassword(), [
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
     }
 
