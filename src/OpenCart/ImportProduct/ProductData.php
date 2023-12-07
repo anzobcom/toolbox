@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp\OpenCart\ImportProduct;
+namespace Anzob\Toolbox\OpenCart\ImportProduct;
 
 final class ProductData
 {

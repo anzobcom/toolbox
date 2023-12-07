@@ -1,8 +1,8 @@
 <?php
 
-namespace Anzob\ToolboxApp\OpenCart\ImportProduct\ProductResolvers;
+namespace Anzob\Toolbox\OpenCart\ImportProduct\ProductResolvers;
 
-use Anzob\ToolboxApp\OpenCart\ImportProduct\ProductData;
+use Anzob\Toolbox\OpenCart\ImportProduct\ProductData;
 
 class WildberriesProductResolver extends AbstractProductResolver
 {

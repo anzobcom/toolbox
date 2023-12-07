@@ -5,9 +5,9 @@ declare(strict_types=1);
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Anzob\ToolboxApp\OpenCart\PublishTheme\PublishThemeCommand;
-use Anzob\ToolboxApp\Other\ProductImport\ProductsImportCommand;
-use Anzob\ToolboxApp\PingCommand;
+use Anzob\Toolbox\OpenCart\PublishTheme\PublishThemeCommand;
+use Anzob\Toolbox\Other\ProductImport\ProductsImportCommand;
+use Anzob\Toolbox\PingCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application();

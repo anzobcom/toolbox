@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp\OpenCart\PublishTheme\Strategies;
+namespace Anzob\Toolbox\OpenCart\PublishTheme\Strategies;
 
-use Anzob\ToolboxApp\OpenCart\PublishTheme\PublishingResult;
+use Anzob\Toolbox\OpenCart\PublishTheme\PublishingResult;
 
 class OpenCartV3PublishingStrategy implements PublishingStrategyInterface
 {

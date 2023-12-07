@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp\OpenCart\PublishTheme;
+namespace Anzob\Toolbox\OpenCart\PublishTheme;
 
 enum PublishingResult
 {

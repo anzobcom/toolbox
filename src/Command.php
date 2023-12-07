@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp;
+namespace Anzob\Toolbox;
 
 use Symfony\Component\Console\Command\Command as CommandAlias;
 use Symfony\Component\Console\Helper\QuestionHelper;

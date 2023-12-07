@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp\OpenCart\PublishTheme;
+namespace Anzob\Toolbox\OpenCart\PublishTheme;
 
-use Anzob\ToolboxApp\Command;
-use Anzob\ToolboxApp\OpenCart\PublishTheme\Strategies\OpenCartV3PublishingStrategy;
-use Anzob\ToolboxApp\OpenCart\PublishTheme\Strategies\OpenCartV4PublishingStrategy;
-use Anzob\ToolboxApp\OpenCart\PublishTheme\Strategies\PublishingStrategyInterface;
+use Anzob\Toolbox\Command;
+use Anzob\Toolbox\OpenCart\PublishTheme\Strategies\OpenCartV3PublishingStrategy;
+use Anzob\Toolbox\OpenCart\PublishTheme\Strategies\OpenCartV4PublishingStrategy;
+use Anzob\Toolbox\OpenCart\PublishTheme\Strategies\PublishingStrategyInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp\Other\ProductImport;
+namespace Anzob\Toolbox\Other\ProductImport;
 
-use Anzob\ToolboxApp\Command;
+use Anzob\Toolbox\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

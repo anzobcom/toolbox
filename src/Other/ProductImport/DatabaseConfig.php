@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Anzob\ToolboxApp\Other\ProductImport;
+namespace Anzob\Toolbox\Other\ProductImport;
 
 final readonly class DatabaseConfig
 {
