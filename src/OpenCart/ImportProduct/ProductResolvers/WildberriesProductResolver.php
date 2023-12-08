@@ -4,9 +4,8 @@ namespace Anzob\Toolbox\OpenCart\ImportProduct\ProductResolvers;
 
 use Anzob\Toolbox\OpenCart\ImportProduct\ProductData;
 
-class WildberriesProductResolver extends AbstractProductResolver
+final class WildberriesProductResolver extends AbstractProductResolver
 {
-
     public function resolve(string $url): ?ProductData
     {
         return null;

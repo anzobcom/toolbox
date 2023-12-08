@@ -12,9 +12,7 @@ final class ImportProductCommand extends Command
 {
     protected function configure(): void
     {
-        $this
-            ->setName('OpenCart:import-product')
-            ->setDescription('Imports product from third party website.');
+        $this->setDescription('Imports product from third party website.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int

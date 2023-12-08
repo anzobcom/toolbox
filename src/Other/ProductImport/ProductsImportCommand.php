@@ -8,7 +8,7 @@ use Anzob\Toolbox\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ProductsImportCommand extends Command
+final class ProductsImportCommand extends Command
 {
     private const ENGLISH_LANGUAGE = 1;
     private const ENG_DESC_COL = 11;

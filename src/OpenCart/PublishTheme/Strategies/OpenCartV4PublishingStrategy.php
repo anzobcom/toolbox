@@ -6,7 +6,7 @@ namespace Anzob\Toolbox\OpenCart\PublishTheme\Strategies;
 
 use Anzob\Toolbox\OpenCart\PublishTheme\PublishingResult;
 
-class OpenCartV4PublishingStrategy implements PublishingStrategyInterface
+final class OpenCartV4PublishingStrategy implements PublishingStrategyInterface
 {
     public function publish(string $name, string $project_dir, string $theme_dir): PublishingResult
     {

@@ -7,7 +7,7 @@ namespace Anzob\Toolbox;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class PingCommand extends Command
+final class PingCommand extends Command
 {
     protected function configure(): void
     {

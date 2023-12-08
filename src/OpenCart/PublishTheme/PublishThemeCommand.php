@@ -29,7 +29,7 @@ final class PublishThemeCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $OpenCart_version = $this->getQuestionHelper()->ask(
+        $opencart_version = $this->getQuestionHelper()->ask(
             $input,
             $output,
             new ChoiceQuestion(
@@ -39,7 +39,7 @@ final class PublishThemeCommand extends Command
             )
         );
 
-        $strategy = $this->resolveStrategy($OpenCart_version);
+        $strategy = $this->resolveStrategy($opencart_version);
 
         $theme_name = $this->getQuestionHelper()->ask(
             $input,

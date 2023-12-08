@@ -7,7 +7,7 @@ namespace Anzob\Toolbox\Other\ProductImport;
 use PDO;
 use PDOStatement;
 
-class Database
+final class Database
 {
     public PDO $connection;
     public PDOStatement|bool $statement;
